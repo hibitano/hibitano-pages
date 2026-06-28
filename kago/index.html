@@ -146,6 +146,43 @@
   /* Features */
   .feature {
     margin-bottom: 56px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    align-items: center;
+  }
+  @media (min-width: 720px) {
+    .feature { grid-template-columns: 1.2fr 1fr; }
+    .feature.feature-reverse .feature-text { order: 2; }
+    .feature.feature-reverse .feature-img { order: 1; }
+  }
+  .feature-img {
+    display: flex;
+    justify-content: center;
+  }
+  .feature-img img {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    border-radius: 22px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.06);
+    border: 1px solid var(--border);
+  }
+  @media (prefers-color-scheme: dark) {
+    .feature-img img {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.3);
+    }
+  }
+  .hero-screenshot {
+    margin: 40px auto 0;
+    max-width: 280px;
+  }
+  .hero-screenshot img {
+    width: 100%;
+    height: auto;
+    border-radius: 28px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15), 0 4px 12px rgba(0,0,0,0.08);
+    border: 1px solid var(--border);
   }
   .feature-label {
     color: var(--accent);
@@ -282,6 +319,9 @@
     <span class="cta-badge disabled">App Store 近日公開</span>
     <span class="cta-note">無料 / 広告なし / iOS 17 以降</span>
   </div>
+  <div class="hero-screenshot">
+    <img src="/kago/screenshots/01_hero_single_list.png" alt="Kago のメイン画面 — 1 つのリストに食材と日用品が自動でカテゴリ別に並ぶ">
+  </div>
 </section>
 
 <section class="empathy">
@@ -308,31 +348,51 @@
   <h2>4 つのコア体験</h2>
 
   <div class="feature">
-    <div class="feature-label">A. 自動分類 + 学習</div>
-    <h3>1 つのリストで、食材も日用品も</h3>
-    <p>牛乳・卵・トマト・鶏もも肉・しょうゆ・ティッシュ — <strong>入れるだけで自動でカテゴリ別に整理</strong>。リストを分けなくても、スーパーの売り場順にちゃんと並びます。<strong>1500 品目以上の日本向け辞書</strong>を内蔵、明太子は肉魚、わかめは卵乳製品、ティッシュは日用品。</p>
-    <p class="feature-note">分類が外れたら品目のアイコンをタップしてカテゴリ変更、<strong>その修正が次回から「あなた専用の辞書」として学習</strong>されます。カテゴリ自体のアイコン (絵文字) も自由に変更可能。海外発のアプリでは届かない、日本のスーパーの動線に最適化。</p>
+    <div class="feature-text">
+      <div class="feature-label">A. 自動分類 + 学習</div>
+      <h3>1 つのリストで、食材も日用品も</h3>
+      <p>牛乳・卵・トマト・鶏もも肉・しょうゆ・ティッシュ — <strong>入れるだけで自動でカテゴリ別に整理</strong>。リストを分けなくても、スーパーの売り場順にちゃんと並びます。<strong>1500 品目以上の日本向け辞書</strong>を内蔵、明太子は肉魚、わかめは卵乳製品、ティッシュは日用品。</p>
+      <p class="feature-note">分類が外れたら品目のアイコンをタップしてカテゴリ変更、<strong>その修正が次回から「あなた専用の辞書」として学習</strong>されます。カテゴリ自体のアイコン (絵文字) も自由に変更可能。海外発のアプリでは届かない、日本のスーパーの動線に最適化。</p>
+    </div>
+    <div class="feature-img">
+      <img src="/kago/screenshots/03_category_preview.png" alt="入力中にカテゴリが自動予測される画面">
+    </div>
+  </div>
+
+  <div class="feature feature-reverse">
+    <div class="feature-text">
+      <div class="feature-label">B. いつもの</div>
+      <h3>あなたの「いつも」を覚えます</h3>
+      <p>毎週の牛乳、月1の砂糖、3ヶ月ごとの洗剤 — それぞれのタイミングで顔を出します。タップ1回で追加。</p>
+      <p class="feature-note">3 日経っても買わなかった項目は自動でいったん引っ込みます。買い直せばすぐ復活。</p>
+    </div>
+    <div class="feature-img">
+      <img src="/kago/screenshots/04_widget_revised.png" alt="ホーム画面ウィジェットからワンタップで追加">
+    </div>
   </div>
 
   <div class="feature">
-    <div class="feature-label">B. いつもの</div>
-    <h3>あなたの「いつも」を覚えます</h3>
-    <p>毎週の牛乳、月1の砂糖、3ヶ月ごとの洗剤 — それぞれのタイミングで顔を出します。タップ1回で追加。</p>
-    <p class="feature-note">3 日経っても買わなかった項目は自動でいったん引っ込みます。買い直せばすぐ復活。</p>
+    <div class="feature-text">
+      <div class="feature-label">C. 音声入力</div>
+      <h3>話しかけるだけで、複数品目</h3>
+      <p>「<strong>牛乳と卵と豆腐</strong>」と話すだけ。Apple Intelligence で 3 品目に自動分解、確認画面で編集できます。</p>
+      <p class="feature-note">すべて端末内で処理、声がクラウドに送られることはありません。</p>
+    </div>
+    <div class="feature-img">
+      <img src="/kago/screenshots/01_hero_single_list.png" alt="メイン画面のマイクボタンから音声で追加">
+    </div>
   </div>
 
-  <div class="feature">
-    <div class="feature-label">C. 音声入力</div>
-    <h3>話しかけるだけで、複数品目</h3>
-    <p>「<strong>牛乳と卵と豆腐</strong>」と話すだけ。Apple Intelligence で 3 品目に自動分解、確認画面で編集できます。</p>
-    <p class="feature-note">すべて端末内で処理、声がクラウドに送られることはありません。</p>
-  </div>
-
-  <div class="feature">
-    <div class="feature-label">D. 分ける・共有する</div>
-    <h3>分けたい時は、分けられる</h3>
-    <p>1 つのリストで充分なことが多いですが、「子どもの遠足」「週末BBQ」など <strong>用途別にリストを分けることも可能</strong>。家族と共有するリストだけを選んで招待もできます。</p>
-    <p class="feature-note">共有するのはリストの中身だけ。「いつもの」サジェストやカテゴリ設定は、人それぞれ独立して育ちます。</p>
+  <div class="feature feature-reverse">
+    <div class="feature-text">
+      <div class="feature-label">D. 分ける・共有する</div>
+      <h3>分けたい時は、分けられる</h3>
+      <p>1 つのリストで充分なことが多いですが、「子どもの遠足」「週末BBQ」など <strong>用途別にリストを分けることも可能</strong>。家族と共有するリストだけを選んで招待もできます。</p>
+      <p class="feature-note">共有するのはリストの中身だけ。「いつもの」サジェストやカテゴリ設定は、人それぞれ独立して育ちます。</p>
+    </div>
+    <div class="feature-img">
+      <img src="/kago/screenshots/02_lists_revised.png" alt="複数リストの管理画面 — 買いものリスト / 子どもの遠足 / 週末BBQ">
+    </div>
   </div>
 </section>
 
