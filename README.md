@@ -11,6 +11,7 @@ pages/
 ├── CNAME                          # 旧 GitHub Pages 用 (Cloudflare Pages では未使用、互換のため残置)
 ├── index.html                     # https://apps.hibitano.net/ の Apps 一覧
 └── kago/
+    ├── index.html                 # https://apps.hibitano.net/kago/ — Kago LP
     └── privacy/
         └── index.html             # https://apps.hibitano.net/kago/privacy/ (ja/en)
 ```
