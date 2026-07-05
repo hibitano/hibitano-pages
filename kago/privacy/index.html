@@ -4,36 +4,48 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kago プライバシーポリシー / Privacy Policy</title>
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
-    line-height: 1.7;
-    color: #222;
-    max-width: 720px;
-    margin: 40px auto;
-    padding: 0 20px;
-    background: #fff;
+  :root{
+    --kinari:#F8F7F2; --shiro:#FFFFFF; --sumi:#26251F; --nibi:#7A756B;
+    --kei:#E5E2D9; --mizu:#1E90FF;
+    --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+    --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",sans-serif;
   }
-  h1 { font-size: 1.8rem; border-bottom: 2px solid #eee; padding-bottom: 8px; }
-  h2 { font-size: 1.3rem; margin-top: 2em; color: #333; }
-  h3 { font-size: 1.1rem; margin-top: 1.5em; color: #444; }
-  hr { border: none; border-top: 1px solid #ddd; margin: 3em 0; }
-  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
-  th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }
-  th { background: #f5f5f5; }
-  a { color: #0066cc; }
-  .updated { color: #888; font-size: 0.9rem; }
-  .nav { background: #f5f5f5; padding: 12px 16px; border-radius: 8px; margin-bottom: 2em; font-size: 0.95rem; }
-  @media (prefers-color-scheme: dark) {
-    body { background: #1a1a1a; color: #ddd; }
-    h1 { border-bottom-color: #333; }
-    h2 { color: #ccc; }
-    h3 { color: #bbb; }
-    hr { border-top-color: #333; }
-    th, td { border-color: #333; }
-    th { background: #2a2a2a; }
-    .nav { background: #2a2a2a; }
-    a { color: #6db3ff; }
+  *{box-sizing:border-box}
+  body{
+    font-family:var(--sans); font-weight:400;
+    line-height:1.95; letter-spacing:.02em; font-size:15px;
+    color:var(--sumi); background:var(--kinari);
+    max-width:720px; margin:0 auto; padding:56px 24px 100px;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1{
+    font-family:var(--serif); font-weight:600; font-size:26px;
+    letter-spacing:.05em; line-height:1.55; text-wrap:balance;
+    border-bottom:1px solid var(--kei); padding-bottom:18px; margin:28px 0 10px;
+  }
+  h2{
+    font-family:var(--serif); font-weight:600; font-size:19px;
+    letter-spacing:.05em; line-height:1.6;
+    border-top:1px solid var(--kei); padding-top:26px; margin:64px 0 16px;
+  }
+  h3{font-size:15px; font-weight:500; margin:2em 0 .5em}
+  hr{border:none; border-top:1px solid var(--kei); margin:72px 0}
+  table{border-collapse:collapse; width:100%; margin:1.2em 0; font-size:13.5px; background:var(--shiro)}
+  th,td{border:1px solid var(--kei); padding:9px 13px; text-align:left; vertical-align:top}
+  th{background:#F3F1EC; font-weight:500}
+  a{color:var(--sumi); text-decoration:underline; text-decoration-color:var(--mizu); text-underline-offset:4px; text-decoration-thickness:1px}
+  a:hover{color:var(--mizu)}
+  ul,ol{padding-left:1.4em}
+  li{margin:.2em 0}
+  .updated{color:var(--nibi); font-size:12.5px; letter-spacing:.06em}
+  .nav{
+    background:var(--shiro); border:1px solid var(--kei);
+    padding:12px 18px; border-radius:2px; margin:0 0 8px; font-size:13px; letter-spacing:.04em;
   }
 </style>
 </head>
