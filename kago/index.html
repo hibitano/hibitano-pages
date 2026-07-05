@@ -148,8 +148,6 @@
 
   /* ---------- ちがい (比較) ---------- */
   .diff{list-style:none; margin:30px 0 0; padding:0}
-  .diff-head{display:grid; grid-template-columns:1fr 1fr; font-size:11px; letter-spacing:.16em; color:var(--nibi); font-weight:500}
-  .diff-head span:last-child{padding-left:22px; color:var(--sumi)}
   .diff li{display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid var(--kei)}
   .diff .was,.diff .now{display:flex; gap:12px; align-items:flex-start; padding:18px 2px}
   .diff .was{color:var(--nibi); padding-right:22px}
@@ -162,8 +160,6 @@
     .diff li{grid-template-columns:1fr}
     .diff .was{padding-right:2px; padding-bottom:4px}
     .diff .now{padding-left:2px; border-left:none; padding-top:0}
-    .diff-head{grid-template-columns:1fr}
-    .diff-head span:last-child{display:none}
   }
 
   /* ---------- 持たないもの ---------- */
@@ -260,7 +256,6 @@
   <!-- ================= ちがい ================= -->
   <section class="wrap">
     <div class="rule-head reveal"><span class="check" aria-hidden="true"></span><h2><span>よくある買い物リストと、</span><span>ちがうところ</span></h2><span class="num">06</span></div>
-    <div class="diff-head reveal"><span>よくあるリスト</span><span>Kago</span></div>
     <ul class="diff">
       <li class="reveal">
         <div class="was"><span class="ring" aria-hidden="true"></span><p>カテゴリ分けも並べ替えも、自分の手で</p></div>
