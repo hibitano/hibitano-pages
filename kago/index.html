@@ -104,8 +104,8 @@
   }
   .check{width:18px;height:18px;flex:none;border-radius:50%;background:var(--mizu);position:relative}
   .check::after{content:"";position:absolute;left:5px;top:3px;width:6px;height:9px;border:solid #fff;border-width:0 1.8px 1.8px 0;transform:rotate(42deg)}
-  .rule-head h2{font-size:clamp(14px,4.3vw,26px); white-space:nowrap}
-  @media(max-width:480px){.rule-head .num{display:none}}
+  /* 見出しは文節の切れ目 (読点の後・<wbr>) でのみ折り返す */
+  .rule-head h2{font-size:clamp(21px,3.4vw,26px); word-break:keep-all; line-break:strict}
   .rule-head .num{font-family:var(--serif); color:var(--nibi); font-size:13px; letter-spacing:.12em; margin-left:auto; font-variant-numeric:tabular-nums}
   .eyebrow{font-size:11px; letter-spacing:.18em; color:var(--nibi); font-weight:500; display:block; margin-bottom:10px}
 
@@ -234,7 +234,7 @@
   </section>
 
   <section class="wrap feature">
-    <div class="rule-head reveal"><span class="check" aria-hidden="true"></span><h2>あなたの「いつも」を覚えます</h2><span class="num">03</span></div>
+    <div class="rule-head reveal"><span class="check" aria-hidden="true"></span><h2>あなたの「いつも」を<wbr>覚えます</h2><span class="num">03</span></div>
     <span class="eyebrow reveal">FEATURE — いつもの</span>
     <p class="lead reveal">買う時間・曜日・買い直す周期の 3 つで学習。「そろそろ砂糖が切れる頃」まで先回りして、ワンタップで再登録できます。よく買うものほど、入力はゼロに近づいていきます。</p>
     <div class="shot-card reveal"><img src="screenshots/hero-chips-crop@2x.png" alt="「いつもの」サジェスト — トイレットペーパー・きゅうり・バナナのチップが並ぶ"></div>
@@ -282,7 +282,7 @@
 
   <!-- ================= 持たないもの ================= -->
   <section class="wrap">
-    <div class="rule-head reveal"><span class="check" aria-hidden="true"></span><h2>Kago が持たないもの</h2><span class="num">07</span></div>
+    <div class="rule-head reveal"><span class="check" aria-hidden="true"></span><h2>Kago が<wbr>持たないもの</h2><span class="num">07</span></div>
     <p class="reveal" style="max-width:34em; margin:0; font-size:14.5px">買い物リストは、道具です。静かであるほど、よく働きます。</p>
     <ul class="nots">
       <li class="reveal"><span class="ring" aria-hidden="true"></span><div><b>アカウント登録</b><span>iCloud があれば、それだけで始まります。</span></div></li>
