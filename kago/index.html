@@ -104,7 +104,8 @@
   }
   .check{width:18px;height:18px;flex:none;border-radius:50%;background:var(--mizu);position:relative}
   .check::after{content:"";position:absolute;left:5px;top:3px;width:6px;height:9px;border:solid #fff;border-width:0 1.8px 1.8px 0;transform:rotate(42deg)}
-  .rule-head h2{font-size:clamp(21px,3.4vw,26px)}
+  .rule-head h2{font-size:clamp(14px,4.3vw,26px); white-space:nowrap}
+  @media(max-width:480px){.rule-head .num{display:none}}
   .rule-head .num{font-family:var(--serif); color:var(--nibi); font-size:13px; letter-spacing:.12em; margin-left:auto; font-variant-numeric:tabular-nums}
   .eyebrow{font-size:11px; letter-spacing:.18em; color:var(--nibi); font-weight:500; display:block; margin-bottom:10px}
 
