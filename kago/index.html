@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
-<title>Kago — いつもの買い物を、覚えてくれる。</title>
-<meta name="description" content="食材から日用品まで 1500 以上の品目を売り場順に自動分類。献立を提案して材料をまとめて登録、買い物パターンを学習し、家族と共有できる iPhone の買い物リストアプリ。無料・広告なし。">
-<meta property="og:title" content="Kago — いつもの買い物を、覚えてくれる。">
-<meta property="og:description" content="食材から日用品まで、入れるだけで売り場順に並ぶ。献立の提案から材料をまとめて登録、「いつもの」を学習し、家族と共有できる買い物リストアプリ。">
+<title>Kago — 献立も、買い物リストも、すべておまかせ。</title>
+<meta name="description" content="提案された献立から選ぶだけで、必要な材料が売り場順の買い物リストに。食材から日用品まで 1500 以上の品目を自動分類、「いつもの」を学習し、家族と共有できる iPhone の買い物リストアプリ。無料・広告なし。">
+<meta property="og:title" content="Kago — 献立も、買い物リストも、すべておまかせ。">
+<meta property="og:description" content="提案された献立から選ぶだけで、材料が売り場順の買い物リストに。「いつもの」を学習し、家族と共有できる買い物リストアプリ。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://apps.hibitano.net/kago/">
 <meta property="og:image" content="https://apps.hibitano.net/kago/screenshots/hero-main.png">
@@ -60,7 +60,7 @@
   /* ---------- hero ---------- */
   .hero{text-align:center; padding:72px 0 0}
   .hero h1{font-size:clamp(30px,7vw,46px)}
-  .hero p.sub{color:var(--nibi); max-width:30em; margin:26px auto 0; padding:0 22px; font-size:14.5px}
+  .hero p.sub{color:var(--nibi); margin:26px 0 0; font-size:14.5px}
   .cta-row{display:flex; gap:16px; justify-content:center; align-items:center; margin-top:34px; flex-wrap:wrap}
   .btn{
     display:inline-block; font-size:14px; letter-spacing:.08em;
@@ -197,8 +197,8 @@
 
 <!-- ================= HERO ================= -->
 <header class="hero wrap">
-  <h1>いつもの買い物を、<br>覚えてくれる。</h1>
-  <p class="sub">食材から日用品まで、1500 以上の品目を売り場ごとに自動分類。あなたの買い物パターンを学習し、家族と共有できる買い物リストです。</p>
+  <h1>献立も、買い物リストも、<br>すべておまかせ。</h1>
+  <p class="sub">提案された献立から気に入ったものを選ぶだけで、必要な材料が売り場順の買い物リストになります。いつもの品は覚えて、家族とも共有。</p>
   <div class="cta-row">
     <a class="btn" href="https://apps.apple.com/jp/app/id6782502950" target="_blank" rel="noopener">App Store で入手</a>
     <span class="badge"><i></i>無料・広告なし</span>
@@ -207,59 +207,16 @@
   <!-- 実スクショ差し込みまでの CSS モック -->
   <div class="phone reveal">
     <div class="screen">
-      <img src="screenshots/hero-main@2x.png" alt="Kago のメイン画面 — 品目がカテゴリ別に売り場順で並び、下部に「いつもの」サジェストが表示されている" style="display:block;width:100%">
+      <img src="screenshots/07_meal_proposal.png" alt="献立の提案画面 — 肉じゃが・回鍋肉・鮭のムニエル・親子丼の 4 品が選ばれ、下に「この献立の材料をリストへ」ボタン" style="display:block;width:100%">
     </div>
   </div>
 </header>
 
 <main>
 
-  <!-- ================= 一日のリスト (案C 移植) ================= -->
-  <section class="wrap">
-    <div class="rule-head reveal"><span class="check" aria-hidden="true"></span><h2>きょうの、かご。</h2><span class="num">01</span></div>
-    <p class="reveal" style="max-width:34em; margin:0; font-size:14.5px">ある家族の一日を、リストでたどってみます。</p>
-    <ol class="day" id="day">
-      <li><span class="ring" aria-hidden="true"></span><span class="t">7:20</span><p>冷蔵庫の前で「牛乳がない」。その場で、<strong>リストに追加</strong>。</p></li>
-      <li><span class="ring" aria-hidden="true"></span><span class="t">12:00</span><p>昼休みにひらいた家族のリストにも、同じ「牛乳」が並んでいる。<strong>言わなくても、伝わっている</strong>。</p></li>
-      <li><span class="ring" aria-hidden="true"></span><span class="t">18:10</span><p>スーパーで開くと、リストは<strong>売り場の順</strong>に並んでいる。行ったり来たりせず、上から辿るだけ。</p></li>
-      <li id="day-last"><span class="ring" aria-hidden="true"></span><span class="t">18:24</span><p><span class="buy">牛乳、買えた。</span>チェックひとつで、ふたりのリストから消える。</p></li>
-    </ol>
-  </section>
-
-  <!-- ================= FEATURES ================= -->
-  <section class="wrap feature">
-    <div class="rule-head reveal"><span class="check" aria-hidden="true"></span><h2><span>1 つのリストで、</span><span>食材も日用品も</span></h2><span class="num">02</span></div>
-    <span class="eyebrow reveal">FEATURE — 自動分類</span>
-    <p class="lead reveal">「小松菜」も「めんつゆ」も、洗剤やトイレットペーパーも。リストを分けなくても、スーパーの売り場順にちゃんと並びます。日本の買い物に並ぶ 1500 以上の品目を 7 つの売り場カテゴリへ自動で分類。並び順は、よく行くお店の動線に合わせて変えられます。</p>
-    <div class="shot-phone reveal"><img src="screenshots/03_category_preview.png" alt="「明太子」と入力すると肉・魚カテゴリに分類される様子"></div>
-  </section>
-
-  <section class="wrap feature">
-    <div class="rule-head reveal"><span class="check" aria-hidden="true"></span><h2><span>あなたの「いつも」を</span><span>覚えます</span></h2><span class="num">03</span></div>
-    <span class="eyebrow reveal">FEATURE — いつもの</span>
-    <p class="lead reveal">買う時間・曜日・買い直す周期の 3 つで学習。「そろそろ砂糖が切れる頃」まで先回りして、ワンタップで再登録できます。よく買うものほど、入力はゼロに近づいていきます。</p>
-    <div class="shot-card reveal"><img src="screenshots/hero-chips-crop@2x.png" alt="「いつもの」サジェスト — トイレットペーパー・きゅうり・バナナのチップが並ぶ"></div>
-    <p class="day-coda reveal">— 明日の「いつもの」は、もう覚えています。</p>
-  </section>
-
-  <section class="wrap feature">
-    <div class="rule-head reveal"><span class="check" aria-hidden="true"></span><h2><span>話すだけで、</span><span>リストになる</span></h2><span class="num">04</span></div>
-    <span class="eyebrow reveal">FEATURE — 音声入力</span>
-    <p class="lead reveal">「牛乳と卵と食パン」— まとめて話せば、Apple Intelligence が 3 つの品目に分けて追加します。認識も分解も、すべて iPhone の中で完結。台所で手が塞がっていても、リストは進みます。</p>
-    <div class="shot-phone reveal"><img src="screenshots/06_voice_confirm.png" alt="音声の認識結果を確認する画面 — 卵・牛乳・食パンの 3 品目に分解されている"></div>
-  </section>
-
-  <section class="wrap feature">
-    <div class="rule-head reveal"><span class="check" aria-hidden="true"></span><h2><span>家族と、</span><span>同じかごを持つ</span></h2><span class="num">05</span></div>
-    <span class="eyebrow reveal">FEATURE — 複数リスト & 共有</span>
-    <p class="lead reveal">リストは、個人用・家族用・職場用と、いくつでも使い分けられます。共有したいリストだけ、リンクをひとつ送れば家族のものに。誰かが買えば、みんなのリストから消える。「あれ買った?」の往復が、静かになくなります。</p>
-    <div class="shot-bezel reveal"><img src="screenshots/02_lists_revised.png" alt="マイリスト画面 — 買いものリスト・こどもの遠足・週末 BBQ の 3 つのリスト"></div>
-    <p class="mini-note reveal">iCloud で同期します。アカウント登録は必要ありません。</p>
-  </section>
-
   <!-- ================= 献立 ================= -->
   <section class="wrap feature">
-    <div class="rule-head reveal"><span class="check" aria-hidden="true"></span><h2><span>今夜なに作ろう、</span><span>から始めない</span></h2><span class="num">06</span></div>
+    <div class="rule-head reveal"><span class="check" aria-hidden="true"></span><h2><span>今夜なに作ろう、</span><span>から始めない</span></h2><span class="num">01</span></div>
     <span class="eyebrow reveal">FEATURE — 献立の提案</span>
     <p class="lead reveal">「4 品」と決めるだけで、和食・洋食・中華をまぜて献立を提案します。気に入らない一品は、その場で差し替え。</p>
     <div class="shot-phone reveal"><img src="screenshots/07_meal_proposal.png" alt="献立の提案画面 — 肉じゃが・回鍋肉・鮭のムニエル・親子丼の 4 品が選ばれ、下に「この献立の材料をリストへ」ボタン"></div>
@@ -275,6 +232,49 @@
     </div>
     <p class="lead reveal" style="margin-top:38px">316 品の献立を内蔵。作り方は、レシピサイトの検索結果へ 1 タップで飛べます。</p>
     <div class="shot-phone reveal"><img src="screenshots/12_meal_browse.png" alt="献立をえらぶ画面 — 主菜 208・副菜 108 のセグメントと、ヘルシー・がっつり・時短・鍋・麺のタグ、和食 85 品の一覧"></div>
+  </section>
+
+  <!-- ================= 一日のリスト (案C 移植) ================= -->
+  <section class="wrap">
+    <div class="rule-head reveal"><span class="check" aria-hidden="true"></span><h2>きょうの、かご。</h2><span class="num">02</span></div>
+    <p class="reveal" style="max-width:34em; margin:0; font-size:14.5px">ある家族の一日を、リストでたどってみます。</p>
+    <ol class="day" id="day">
+      <li><span class="ring" aria-hidden="true"></span><span class="t">7:20</span><p>冷蔵庫の前で「牛乳がない」。その場で、<strong>リストに追加</strong>。</p></li>
+      <li><span class="ring" aria-hidden="true"></span><span class="t">12:00</span><p>昼休みにひらいた家族のリストにも、同じ「牛乳」が並んでいる。<strong>言わなくても、伝わっている</strong>。</p></li>
+      <li><span class="ring" aria-hidden="true"></span><span class="t">18:10</span><p>スーパーで開くと、リストは<strong>売り場の順</strong>に並んでいる。行ったり来たりせず、上から辿るだけ。</p></li>
+      <li id="day-last"><span class="ring" aria-hidden="true"></span><span class="t">18:24</span><p><span class="buy">牛乳、買えた。</span>チェックひとつで、ふたりのリストから消える。</p></li>
+    </ol>
+  </section>
+
+  <!-- ================= FEATURES ================= -->
+  <section class="wrap feature">
+    <div class="rule-head reveal"><span class="check" aria-hidden="true"></span><h2><span>1 つのリストで、</span><span>食材も日用品も</span></h2><span class="num">03</span></div>
+    <span class="eyebrow reveal">FEATURE — 自動分類</span>
+    <p class="lead reveal">「小松菜」も「めんつゆ」も、洗剤やトイレットペーパーも。リストを分けなくても、スーパーの売り場順にちゃんと並びます。日本の買い物に並ぶ 1500 以上の品目を 7 つの売り場カテゴリへ自動で分類。並び順は、よく行くお店の動線に合わせて変えられます。</p>
+    <div class="shot-phone reveal"><img src="screenshots/03_category_preview.png" alt="「明太子」と入力すると肉・魚カテゴリに分類される様子"></div>
+  </section>
+
+  <section class="wrap feature">
+    <div class="rule-head reveal"><span class="check" aria-hidden="true"></span><h2><span>あなたの「いつも」を</span><span>覚えます</span></h2><span class="num">04</span></div>
+    <span class="eyebrow reveal">FEATURE — いつもの</span>
+    <p class="lead reveal">買う時間・曜日・買い直す周期の 3 つで学習。「そろそろ砂糖が切れる頃」まで先回りして、ワンタップで再登録できます。よく買うものほど、入力はゼロに近づいていきます。</p>
+    <div class="shot-card reveal"><img src="screenshots/hero-chips-crop@2x.png" alt="「いつもの」サジェスト — トイレットペーパー・きゅうり・バナナのチップが並ぶ"></div>
+    <p class="day-coda reveal">— 明日の「いつもの」は、もう覚えています。</p>
+  </section>
+
+  <section class="wrap feature">
+    <div class="rule-head reveal"><span class="check" aria-hidden="true"></span><h2><span>話すだけで、</span><span>リストになる</span></h2><span class="num">05</span></div>
+    <span class="eyebrow reveal">FEATURE — 音声入力</span>
+    <p class="lead reveal">「牛乳と卵と食パン」— まとめて話せば、Apple Intelligence が 3 つの品目に分けて追加します。認識も分解も、すべて iPhone の中で完結。台所で手が塞がっていても、リストは進みます。</p>
+    <div class="shot-phone reveal"><img src="screenshots/06_voice_confirm.png" alt="音声の認識結果を確認する画面 — 卵・牛乳・食パンの 3 品目に分解されている"></div>
+  </section>
+
+  <section class="wrap feature">
+    <div class="rule-head reveal"><span class="check" aria-hidden="true"></span><h2><span>家族と、</span><span>同じかごを持つ</span></h2><span class="num">06</span></div>
+    <span class="eyebrow reveal">FEATURE — 複数リスト & 共有</span>
+    <p class="lead reveal">リストは、個人用・家族用・職場用と、いくつでも使い分けられます。共有したいリストだけ、リンクをひとつ送れば家族のものに。誰かが買えば、みんなのリストから消える。「あれ買った?」の往復が、静かになくなります。</p>
+    <div class="shot-bezel reveal"><img src="screenshots/02_lists_revised.png" alt="マイリスト画面 — 買いものリスト・こどもの遠足・週末 BBQ の 3 つのリスト"></div>
+    <p class="mini-note reveal">iCloud で同期します。アカウント登録は必要ありません。</p>
   </section>
 
   <!-- ================= ちがい ================= -->
